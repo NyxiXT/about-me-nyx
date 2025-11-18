@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>NewWeb</title>
+</head>
+
+<body>
+    <header>
+        <h1>FrontendDev</h1>
+
+        <!-- Кнопка відкриття меню -->
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+
+        <nav id="nav-menu">
+            <!-- Кнопка закриття -->
+            <div class="close-btn" id="close-btn">&times;</div>
+
+            <a href="#home">Home</a>
+            <a href="#products">Products</a>
+            <a href="#blog">Blog</a>
+            <a href="#news">News</a>
+            <a href="#about">About Me</a>
+            <a href="#contacts" class="contacts-btn">Contacts</a>
+        </nav>
+    </header>
+    <section id="home">
+        <h1>Hi! I'm Nyx and i Frontend Dev!</h1>
+        <p>
+            I create modern, user-friendly and high-quality websites <strong>for you</strong>.
+        <p>
+            My goal is to make your web experience enjoyable, fast and beautiful.
+        </p>
+        </p>
+        <p>
+            In the future, I plan to develop in <strong>C#</strong> and <strong>game development</strong>,
+            to combine web and game dev in creative projects.
+        </p>
+
+        <a href="#products" class="learnmore-btn">Learn more</a>
+    </section>
+
+    <section id="products">
+        <h1>Products</h1>
+        <p>all products <strong>coming soon</strong></p>
+    </section>
+
+    <section id="blog">
+        <h1>Blog</h1>
+        <p>At the moment, no videos are being developed, we are waiting for content, new content will appear here every
+            time!</p>
+    </section>
+
+    <section id="тews">
+        <h1>News</h1>
+        <p>I'm trying to make more content, stay tuned for news. <strong>Thank you!</strong></p>
+    </section>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            Hi! I’m a frontend developer who is actively growing in the field of web technologies and programming.
+            My main goal is to create high-quality, user-friendly, and unique websites <strong>for you</strong>,
+            combining style, speed, and thoughtful design in every detail.
+        </p>
+
+        <p>
+            My programming journey started over a year ago, and since then I’ve completed more than <strong>10 C#
+                projects</strong>
+            (including 3–4 successful commercial ones) and over <strong>20 web projects</strong>,
+            most of which reached their goals. Around 10–20% of them were experimental or educational,
+            but each one helped me grow and deepen my technical knowledge.
+        </p>
+
+        <p>
+            In 2024, I made my first attempts at <strong>game development</strong> and continue exploring this field —
+            especially through the <strong>Roblox</strong> platform, where I work on gameplay logic and mechanics using
+            <strong>Lua</strong>.
+            Besides that, I often work with <strong>C#</strong> and <strong>C++</strong>,
+            expanding my skills in game development and software logic.
+        </p>
+
+        <p>
+            Most of my work revolves around websites — building interfaces and bringing creative ideas to life as
+            complete products.
+            I also offer <strong>website sales</strong> and can create <strong>small custom websites</strong>,
+            from personal portfolios to simple online stores.
+            All my code is written entirely by me, though I sometimes use online resources to learn and improve.
+        </p>
+
+        <p>
+            Beyond development, I create content on <strong>TikTok</strong> and plan to grow my presence on
+            <strong>YouTube</strong>,
+            where I’ll share my process of building websites, games, and my overall experience as a developer.
+            For me, every new project isn’t just code — it’s a step forward that opens new opportunities.
+        </p>
+
+        <p>
+            I strive to grow as both a developer and a creator — combining design, logic, and creativity
+            to make technology more accessible and engaging <strong>for you</strong>.
+        </p>
+    </section>
+    <script>
+        const sections = document.querySelectorAll("section");
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show");
+                }
+            });
+        }, { threshold: 0.5 });
+
+        sections.forEach(section => observer.observe(section));
+
+        const menuToggle = document.getElementById('menu-toggle');
+        const closeBtn = document.getElementById('close-btn');
+        const navMenu = document.getElementById('nav-menu');
+
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.add('active');
+        });
+
+        closeBtn.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+        });
+
+        // Закривати меню при кліку на посилання
+        document.querySelectorAll('#nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+
+</html>
